@@ -263,3 +263,128 @@ footer a {
     margin: 5px 0;
     line-height: 1.6;
 }
+
+
+/* --- Stiluri Specifice Paginii CPS --- */
+
+/* Secțiunea Principală (Hero) CPS */
+.cps-hero-section {
+    /* O imagine de fundal relevantă pentru sudură */
+    background: url('https://picsum.photos/1200/500?random=3') center center/cover no-repeat;
+    color: white;
+    padding: 100px 50px;
+    min-height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+}
+
+.cps-hero-overlay {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.6); /* Overlay mai întunecat pentru contrast */
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.cps-hero-overlay h1 {
+    color: white;
+    font-size: 3em;
+    margin-top: 0;
+}
+.cps-hero-overlay p {
+    font-size: 1.2em;
+}
+
+/* Grid-ul Serviciilor CPS */
+.cps-services-grid {
+    padding: 60px 50px;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+.cps-services-grid h2 {
+    color: #004a99;
+    margin-bottom: 40px;
+}
+
+.service-card {
+    display: inline-block;
+    width: 30%; /* Trei pe un rând */
+    margin: 1%;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    min-height: 180px;
+    vertical-align: top;
+}
+
+.service-card h3 {
+    color: #ff5733; /* Culoare accent */
+    font-size: 1.3em;
+}
+
+/* Secțiunea Tehnologie și Echipamente */
+.cps-tech-section {
+    background-color: #f0f0f0;
+    padding: 60px 50px;
+    text-align: center;
+}
+
+.cps-tech-section h2 {
+    color: #004a99;
+    margin-bottom: 40px;
+}
+
+.tech-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.tech-image {
+    max-width: 40%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tech-text {
+    max-width: 50%;
+}
+
+.tech-text ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+/* Responsiveness pentru mobil (CPS Page) */
+@media (max-width: 768px) {
+    .service-card {
+        width: 98%; 
+        margin: 10px 0;
+    }
+    
+    .tech-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .tech-image {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .tech-text {
+        max-width: 100%;
+    }
+}
