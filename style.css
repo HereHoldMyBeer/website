@@ -1,0 +1,187 @@
+/* Stiluri Generale */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    scroll-behavior: smooth; /* Permite derularea lină la click pe meniu */
+}
+
+/* 1. Meniul de Navigare */
+header {
+    background-color: #004a99; /* Albastru închis */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    position: sticky; /* Face meniul să rămână vizibil când derulezi */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 1em;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffd700; /* Galben auriu pentru hover */
+}
+
+/* 2. Secțiunea Principală (Hero) cu Fundal Dinamic */
+.hero-section {
+    position: relative;
+    background: url('https://picsum.photos/1200/600') center center/cover no-repeat;
+    /* Schimbă linkul de mai sus cu o imagine relevantă pentru firma ta, sau lasă 'picsum.photos' pentru o imagine aleatorie */
+    color: white;
+    padding: 100px 50px;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Suprapunere semi-transparentă pentru lizibilitatea textului */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Strat negru transparent */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 50%;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+/* Chenar pentru Firma Parteneră (CPS) */
+.partner-box {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.9); /* Fundal alb semi-transparent */
+    color: #333;
+    padding: 25px;
+    border-radius: 8px;
+    max-width: 350px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-left: 5px solid #ff5733; /* O linie colorată pe margine */
+}
+
+.partner-box h2 {
+    margin-top: 0;
+    color: #ff5733;
+}
+
+.partner-box a {
+    display: inline-block;
+    background-color: #004a99;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+
+/* 3. Secțiunea Obiectul Muncii */
+.work-section {
+    padding: 60px 50px;
+    text-align: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.work-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #004a99;
+}
+
+.work-item {
+    margin: 30px 0;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.work-item h3 {
+    color: #ff5733;
+    margin-top: 0;
+}
+
+/* 4. Secțiunea Contact (Footer) */
+footer {
+    background-color: #222;
+    color: white;
+    padding: 40px 50px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    margin-bottom: 20px;
+}
+
+footer a {
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 0.9em;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+}
+
+/* Responsiveness pentru ecrane mici */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav a {
+        margin-left: 15px;
+    }
+
+    .hero-section {
+        flex-direction: column;
+        padding: 50px 20px;
+    }
+    
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .partner-box {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .work-section {
+        padding: 40px 20px;
+    }
+}
