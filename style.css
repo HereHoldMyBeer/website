@@ -185,3 +185,81 @@ footer a {
         padding: 40px 20px;
     }
 }
+
+
+
+
+/* --- Stiluri Specifice Paginii de Contact --- */
+
+/* Fundal NDT pentru secțiunea principală de contact */
+.contact-page-hero {
+    /* Schimbă linkul de mai jos cu o imagine NDT relevantă */
+    background: url('https://picsum.photos/1200/500?random=1') center center/cover no-repeat;
+    /* Imagini tipice NDT: inspectii cu ultrasunete, radiografii, tevi, structuri metalice */
+    color: white;
+    padding: 80px 50px;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+}
+
+/* Suprapunere (overlay) pentru fundalul NDT */
+.contact-page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Strat mai întunecat pentru lizibilitate */
+    z-index: 1;
+}
+
+.contact-header-content {
+    position: relative;
+    z-index: 2;
+}
+
+.contact-header-content h1 {
+    font-size: 3em;
+    color: white; /* Titlu alb pe fundalul NDT */
+}
+
+/* Grid-ul pentru Chenarele de Contact */
+.contact-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Aranjează chenarele */
+    gap: 30px;
+    padding: 60px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-box {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-top: 5px solid #004a99; /* Linie albastră sus */
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+}
+
+.contact-box:hover {
+    transform: translateY(-5px);
+}
+
+.contact-box h2 {
+    color: #ff5733; /* Culoare accent */
+    font-size: 1.5em;
+    margin-top: 0;
+    text-align: left;
+}
+
+.data-line {
+    margin: 5px 0;
+    line-height: 1.6;
+}
