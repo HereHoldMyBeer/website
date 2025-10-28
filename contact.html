@@ -5,10 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact - Univteh</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="mobile.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a2e0e6a64f.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="mobile.css" />
+  <script>
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      const menuButton = document.querySelector('.menu-toggle i');
+      navLinks.classList.toggle('active');
+      // Schimbă iconița când meniul este deschis/închis
+      menuButton.classList.toggle('fa-bars');
+      menuButton.classList.toggle('fa-xmark');
+    }
+
+    // Închide meniul când se face click pe un link
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          document.querySelector('.nav-links').classList.remove('active');
+          const menuButton = document.querySelector('.menu-toggle i');
+          menuButton.classList.add('fa-bars');
+          menuButton.classList.remove('fa-xmark');
+        });
+      });
+    });
+  </script>
   <style>
     /* --- Stiluri specifice paginii de contact --- */
     main {
@@ -89,6 +111,9 @@
       <div class="logo">
         <img src="https://i.postimg.cc/Nf4FMGKn/logo.png" alt="Univteh Logo">
       </div>
+      <button class="menu-toggle" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars"></i>
+      </button>
       <ul class="nav-links">
         <li><a href="index.html#home">Acasă</a></li>
         <li><a href="index.html#servicii">Servicii</a></li>
@@ -98,6 +123,7 @@
         <li><a href="index.html#blog">FAQ</a></li>
       </ul>
       <div class="nav-contact">
+        <span><i class="fa-solid fa-phone"></i> +40 725 918 647</span>
         <a href="contact.html" class="btn">Contact</a>
       </div>
     </nav>
