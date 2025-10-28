@@ -32,29 +32,9 @@
     });
   </script>
   <style>
-    /* Stiluri pentru butonul de meniu mobil */
-    .menu-toggle {
-      display: none; /* Ascuns pe desktop */
-      background: none;
-      border: none;
-      color: #f8c045;
-      font-size: 24px;
-      cursor: pointer;
-      padding: 8px;
-      position: absolute;
-      right: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 1000;
-    }
-
     @media screen and (max-width: 768px) {
-      .menu-toggle {
-        display: block; /* Vizibil pe mobil */
-      }
-      
-      .nav-contact {
-        display: none; /* Ascunde contact pe mobil */
+      .phone-number {
+        display: none;
       }
       
       .nav-links {
@@ -75,6 +55,24 @@
       
       .nav-links.active li {
         margin: 10px 0;
+      }
+
+      .nav-links {
+        display: none;
+      }
+      
+      .menu-toggle {
+        background: #f8c045;
+        color: #111;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 6px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      
+      .menu-toggle:hover {
+        background: #ffd665;
       }
     }
 
@@ -157,9 +155,6 @@
       <div class="logo">
         <img src="https://i.postimg.cc/Nf4FMGKn/logo.png" alt="Univteh Logo">
       </div>
-      <button class="menu-toggle" onclick="toggleMenu()">
-        <i class="fa-solid fa-bars" style="font-size: 28px;"></i>
-      </button>
       <ul class="nav-links">
         <li><a href="index.html#home">Acasă</a></li>
         <li><a href="index.html#servicii">Servicii</a></li>
@@ -169,8 +164,8 @@
         <li><a href="index.html#blog">FAQ</a></li>
       </ul>
       <div class="nav-contact">
-        <span><i class="fa-solid fa-phone"></i> +40 725 918 647</span>
-        <a href="contact.html" class="btn">Contact</a>
+        <span class="phone-number"><i class="fa-solid fa-phone"></i> +40 725 918 647</span>
+        <button onclick="toggleMenu()" class="btn menu-toggle">Meniu</button>
       </div>
     </nav>
   </header>
