@@ -1,390 +1,261 @@
-/* Stiluri Generale */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f8f8;
-    color: #333;
-    scroll-behavior: smooth; /* Permite derularea lină la click pe meniu */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* 1. Meniul de Navigare */
-header {
-    background-color: #004a99; /* Albastru închis */
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 50px;
-    position: sticky; /* Face meniul să rămână vizibil când derulezi */
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0f1114;
+  color: #eaeaea;
+  line-height: 1.6;
+}
+
+/* HEADER */
+.topbar {
+  background: #1a1d21;
+  color: #ccc;
+  font-size: 0.9em;
+  padding: 5px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: rgba(18, 20, 25, 0.9);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(5px);
 }
 
 .logo {
-    font-size: 1.5em;
-    font-weight: bold;
+  font-size: 1.4em;
+  font-weight: 700;
+  color: #f8c045;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 25px;
-    font-size: 1em;
-    padding: 5px 0;
-    transition: color 0.3s;
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
 }
 
-nav a:hover {
-    color: #ffd700; /* Galben auriu pentru hover */
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.nav-links a:hover {
+  color: #f8c045;
 }
 
-/* 2. Secțiunea Principală (Hero) cu Fundal Dinamic */
-.hero-section {
-    position: relative;
-    background: url('https://picsum.photos/1200/600') center center/cover no-repeat;
-    /* Schimbă linkul de mai sus cu o imagine relevantă pentru firma ta, sau lasă 'picsum.photos' pentru o imagine aleatorie */
-    color: white;
-    padding: 100px 50px;
-    min-height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.btn {
+  background: #f8c045;
+  color: #111;
+  padding: 10px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: #ffd665;
 }
 
-/* Suprapunere semi-transparentă pentru lizibilitatea textului */
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4); /* Strat negru transparent */
-    z-index: 1;
+/* HERO */
+.hero {
+  height: 90vh;
+  background: url('https://i.postimg.cc/4NgB5vLq/ndt-bg.jpg') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
-
 .hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 50%;
+  background: rgba(0,0,0,0.5);
+  padding: 40px;
+  border-radius: 10px;
+}
+.hero h1 {
+  font-size: 2.5em;
+  color: #fff;
+}
+.hero p {
+  margin: 20px 0;
+  font-size: 1.1em;
+  color: #ddd;
 }
 
-.hero-content h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
+/* SECTIONS */
+.section {
+  padding: 80px 10%;
+  text-align: center;
+}
+.section h2 {
+  font-size: 2em;
+  color: #f8c045;
+  margin-bottom: 40px;
+}
+.bg-dark {
+  background: #171a1f;
 }
 
-/* Chenar pentru Firma Parteneră (CPS) */
-.partner-box {
-    position: relative;
-    z-index: 2;
-    background-color: rgba(255, 255, 255, 0.9); /* Fundal alb semi-transparent */
-    color: #333;
-    padding: 25px;
-    border-radius: 8px;
-    max-width: 350px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    border-left: 5px solid #ff5733; /* O linie colorată pe margine */
+/* SERVICII */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
 }
-
-.partner-box h2 {
-    margin-top: 0;
-    color: #ff5733;
-}
-
-.partner-box a {
-    display: inline-block;
-    background-color: #004a99;
-    color: white;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 4px;
-    margin-top: 15px;
-}
-
-/* 3. Secțiunea Obiectul Muncii */
-.work-section {
-    padding: 60px 50px;
-    text-align: center;
-    max-width: 1200px;
-    margin: auto;
-}
-
-.work-section h2 {
-    font-size: 2.5em;
-    margin-bottom: 40px;
-    color: #004a99;
-}
-
-.work-item {
-    margin: 30px 0;
-    padding: 20px;
-    border-bottom: 1px solid #ddd;
-    text-align: left;
-}
-
-.work-item h3 {
-    color: #ff5733;
-    margin-top: 0;
-}
-
-/* 4. Secțiunea Contact (Footer) */
-footer {
-    background-color: #222;
-    color: white;
-    padding: 40px 50px 20px;
-    text-align: center;
-}
-
-.footer-content {
-    margin-bottom: 20px;
-}
-
-footer a {
-    color: #ffd700;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.copyright {
-    margin-top: 20px;
-    font-size: 0.9em;
-    border-top: 1px solid #444;
-    padding-top: 10px;
-}
-
-/* Responsiveness pentru ecrane mici */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-    }
-
-    nav a {
-        margin-left: 15px;
-    }
-
-    .hero-section {
-        flex-direction: column;
-        padding: 50px 20px;
-    }
-    
-    .hero-content {
-        max-width: 100%;
-        text-align: center;
-        margin-bottom: 30px;
-    }
-
-    .partner-box {
-        max-width: 100%;
-        text-align: center;
-    }
-
-    .work-section {
-        padding: 40px 20px;
-    }
-}
-
-
-
-
-/* --- Stiluri Specifice Paginii de Contact --- */
-
-/* Fundal NDT pentru secțiunea principală de contact */
-.contact-page-hero {
-    /* Schimbă linkul de mai jos cu o imagine NDT relevantă */
-    background: url('https://picsum.photos/1200/500?random=1') center center/cover no-repeat;
-    /* Imagini tipice NDT: inspectii cu ultrasunete, radiografii, tevi, structuri metalice */
-    color: white;
-    padding: 80px 50px;
-    min-height: 250px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    text-align: center;
-}
-
-/* Suprapunere (overlay) pentru fundalul NDT */
-.contact-page-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Strat mai întunecat pentru lizibilitate */
-    z-index: 1;
-}
-
-.contact-header-content {
-    position: relative;
-    z-index: 2;
-}
-
-.contact-header-content h1 {
-    font-size: 3em;
-    color: white; /* Titlu alb pe fundalul NDT */
-}
-
-/* Grid-ul pentru Chenarele de Contact */
-.contact-details-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Aranjează chenarele */
-    gap: 30px;
-    padding: 60px 50px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.contact-box {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-top: 5px solid #004a99; /* Linie albastră sus */
-    padding: 25px;
-    border-radius: 6px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s;
-}
-
-.contact-box:hover {
-    transform: translateY(-5px);
-}
-
-.contact-box h2 {
-    color: #ff5733; /* Culoare accent */
-    font-size: 1.5em;
-    margin-top: 0;
-    text-align: left;
-}
-
-.data-line {
-    margin: 5px 0;
-    line-height: 1.6;
-}
-
-
-/* --- Stiluri Specifice Paginii CPS --- */
-
-/* Secțiunea Principală (Hero) CPS */
-.cps-hero-section {
-    /* O imagine de fundal relevantă pentru sudură */
-    background: url('https://picsum.photos/1200/500?random=3') center center/cover no-repeat;
-    color: white;
-    padding: 100px 50px;
-    min-height: 350px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    text-align: center;
-}
-
-.cps-hero-overlay {
-    position: relative;
-    z-index: 2;
-    background-color: rgba(0, 0, 0, 0.6); /* Overlay mai întunecat pentru contrast */
-    padding: 30px;
-    border-radius: 8px;
-}
-
-.cps-hero-overlay h1 {
-    color: white;
-    font-size: 3em;
-    margin-top: 0;
-}
-.cps-hero-overlay p {
-    font-size: 1.2em;
-}
-
-/* Grid-ul Serviciilor CPS */
-.cps-services-grid {
-    padding: 60px 50px;
-    max-width: 1200px;
-    margin: auto;
-    text-align: center;
-}
-
-.cps-services-grid h2 {
-    color: #004a99;
-    margin-bottom: 40px;
-}
-
 .service-card {
-    display: inline-block;
-    width: 30%; /* Trei pe un rând */
-    margin: 1%;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #eee;
-    border-radius: 6px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    min-height: 180px;
-    vertical-align: top;
+  background: #1e2126;
+  padding: 30px;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+.service-card:hover {
+  transform: translateY(-5px);
+}
+.service-card i {
+  font-size: 2em;
+  color: #f8c045;
+  margin-bottom: 10px;
 }
 
-.service-card h3 {
-    color: #ff5733; /* Culoare accent */
-    font-size: 1.3em;
+/* DESPRE NOI */
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+}
+.about-text {
+  flex: 1;
+  min-width: 280px;
+  text-align: left;
+}
+.about-img img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 10px;
+}
+.about ul {
+  margin-top: 15px;
+  list-style: none;
+}
+.about li {
+  margin-bottom: 8px;
 }
 
-/* Secțiunea Tehnologie și Echipamente */
-.cps-tech-section {
-    background-color: #f0f0f0;
-    padding: 60px 50px;
-    text-align: center;
+/* CERTIFICARI */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+.cert-card {
+  background: #1e2126;
+  padding: 20px;
+  border-radius: 8px;
 }
 
-.cps-tech-section h2 {
-    color: #004a99;
-    margin-bottom: 40px;
+/* PORTOFOLIU */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.portfolio-item img {
+  width: 100%;
+  border-radius: 8px;
+}
+.portfolio-item p {
+  margin-top: 8px;
+  font-size: 0.95em;
 }
 
-.tech-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: left;
+/* BLOG */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+.blog-card {
+  background: #1e2126;
+  padding: 20px;
+  border-radius: 8px;
+}
+.blog-card .btn.small {
+  font-size: 0.9em;
+  padding: 8px 14px;
 }
 
-.tech-image {
-    max-width: 40%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+/* CONTACT */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+.contact-form {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #2a2d33;
+  color: #fff;
+}
+.contact-info {
+  flex: 1;
+  min-width: 280px;
+}
+.contact-info iframe {
+  width: 100%;
+  height: 220px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 15px;
 }
 
-.tech-text {
-    max-width: 50%;
+/* FOOTER */
+footer {
+  text-align: center;
+  background: #0b0c0e;
+  padding: 20px;
+  font-size: 0.9em;
+  color: #888;
+}
+footer a {
+  color: #f8c045;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
 }
 
-.tech-text ul {
-    list-style: disc;
-    padding-left: 20px;
-}
-
-/* Responsiveness pentru mobil (CPS Page) */
+/* RESPONSIVE */
 @media (max-width: 768px) {
-    .service-card {
-        width: 98%; 
-        margin: 10px 0;
-    }
-    
-    .tech-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .tech-image {
-        max-width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .tech-text {
-        max-width: 100%;
-    }
+  .navbar {
+    flex-wrap: wrap;
+  }
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+  .about {
+    flex-direction: column;
+  }
 }
