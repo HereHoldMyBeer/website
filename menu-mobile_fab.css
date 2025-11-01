@@ -1,0 +1,125 @@
+html,
+body {
+  overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+
+/***************************************
+*  Offcanvas Sliding Menu Section
+*  DO NOT EDIT  **
+***************************************/
+
+.offcanvas-collapse {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 100%;
+	width: 100%;
+	padding-right: 1rem;
+	padding-left: 1rem;
+	overflow-y: auto;
+	visibility: hidden;
+	background-color: #dc3545;
+	transition-timing-function: ease-in-out;
+	transition-duration: .3s;
+	transition-property: left, visibility;
+	z-index: 99;
+}
+
+.logged-in.admin-bar .offcanvas-collapse {
+	top: 46px;
+}
+
+.offcanvas-collapse.open {
+	left: 0;
+	visibility: visible;
+}
+
+.offcanvas-collapse ul {
+	text-align: right;
+}
+
+/***************************************
+*  Menu Link Styles
+***************************************/
+
+.main-menu-navbar.main-menu-mobile .navbar-nav .nav-link,
+.main-menu-navbar.main-menu-mobile .navbar-brand a {
+	font-size: 1.3rem;
+	font-weight: 300;
+}
+
+.main-menu-navbar.main-menu-mobile .dropdown-menu a {
+	font-size: 1.15rem;
+	font-weight: 300;
+	padding: .5rem 2rem;
+}
+
+/***************************************
+*  FAB Styles
+****************************************/ 
+	
+.menu-closed-icon {
+	opacity: 0;
+	-o-transform: rotate(360deg);
+	-moz-transform: rotate(360deg);
+	-ms-transform: rotate(360deg);
+	-webkit-transform: rotate(360deg);
+	transform: rotate(360deg);
+	transition: all .3s linear;
+	-o-transition: all .3s linear;
+	-moz-transition: all .3s linear;
+	-webkit-transition: all .3s linear;
+}
+.menu-closed .menu-closed-icon {
+	opacity: 1;
+	-o-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
+	transition: all .3s linear;
+	-o-transition: all .3s linear;
+	-moz-transition: all .3s linear;
+	-webkit-transition: all .3s linear;
+}
+
+.menu-open-icon {
+	opacity: 0;
+	-o-transform: rotate(360deg);
+	-moz-transform: rotate(360deg);
+	-ms-transform: rotate(360deg);
+	-webkit-transform: rotate(360deg);
+	transform: rotate(360deg);
+	transition: all .3s linear;
+	-o-transition: all .3s linear;
+	-moz-transition: all .3s linear;
+	-webkit-transition: all .3s linear;
+}
+.menu-open .menu-open-icon {
+	opacity: 1;
+	-o-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
+	transition: all .3s linear;
+	-o-transition: all .3s linear;
+	-moz-transition: all .3s linear;
+	-webkit-transition: all .3s linear;
+}
+
+.menu-open .scroll-menu-text {
+    opacity: 0 !important;
+    transition: opacity .1s linear;
+	-o-transition: opacity .1s linear;
+	-moz-transition: opacity .1s linear;
+	-webkit-transition: opacity .1s linear;
+}
+
+.fab-toggler {
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+}
+
+.menu-open .fab-toggler {
+    box-shadow: none;
+}
